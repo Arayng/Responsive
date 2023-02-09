@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+* {margin: 0; padding: 0;}
+ol,ul{ list-style: none;}
+a{ text-decoration: none; color:#555;}
+img{ border:0;}
+body{
+    font: 12px/1.6 'Poiret One';
+    color: #fff;
+}
+.mobbg{ display: none;}
+/* 영역별 기본 레이아웃 */
+header{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #fff;
+}
+
+nav{
+    width: 85%;
+    height: 35px;
+    margin: 0 0 0 15%;
+    position: relative;
+    background-color: #212121;
+}
+
+section{
+    width: 85%;
+    margin: 0 0 0 15%;
+    position: relative;
+}
+
+article{
+    height: 260px;
+    float: left;
+}
+
+article:nth-child(1){ width: 60%;
+    height: 520px; /* different*/
+}
+
+article:nth-child(2){ width: 40%;}
+article:nth-child(3){ width: 20%;}
+article:nth-child(4){ width: 20%;}
+
+
+article:nth-child(5){ width: 20%;}
+article:nth-child(6){ width: 40%;}
+article:nth-child(7){ width: 20%;}
+article:nth-child(8){ width: 20%;}
+
+
+article:nth-child(9){ width: 40%;}
+article:nth-child(10){ width: 20%;}
+article:nth-child(11){ width: 20%;}
+article:nth-child(12){ width: 20%;}
+
+/* 레이아웃 애니메이션 */
+
+header, nav, section{ transition: all 0.6s;}
+
+article{ animation: scale1 1s;}
+@keyframes scale1 {
+    0%{ transform: scale(0);}
+    70%{ transform: scale(1);}
+}
+
+header h1{
+    background: url(../img/logo1.png) no-repeat 0 0/contain;
+    width: 180px;
+    height: 136px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-indent: -9999px;
+}
+
+#gnb{
+    position: absolute;
+    top: 300px;
+    right: 57px;
+}
+
+#gnb a{
+    display: block;
+    padding: 3px 30px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.8;
+    transition: all 0.6s;
+}
+#gnb a i{ margin-right: 13px;}
+#gnb a:hover{ color: skyblue;
+}
+
+/* header bottom */
+.sns{
+    width: 90px;
+    height: 47px;
+    position: absolute;
+    bottom: 50px;
+    right: 50%;
+    transform: translate(50%, 0);
+    transition: all 0.6s;
+}
+.sns a{ float: left;}
+/* .sns a:hover{ transform: scale(1.1);} */
+/* .sns a:nth-child(2):hover{ transform: scale(1.1) translate(2px, 0); } */
+
+/* nav */
+nav a{
+    position: absolute;
+    top: 5px;
+}
+
+nav a:nth-child(1){ left: 10px;}
+nav a:nth-child(2){ left: 150px;}
+nav a:nth-child(3){ right: 90px;}
+nav a:nth-child(4){ right: 10px;}
+
+article > div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* main article */
+article .bg1{ background: url(../img/pic1.jpg) center/cover;}
+article .bg2{ background: url(../img/pic2.jpg) center/cover;}
+article .bg3{ background: url(../img/pic3.jpg) center/cover;}
+article .bg4{ background: url(../img/pic4.jpg) center/cover;}
+article .bg5{ background: url(../img/pic5.jpg) center/cover;}
+article .bg6{ background: url(../img/pic6.jpg) center/cover;}
+article .bg7{ background: url(../img/pic7.jpg) center/cover;}
+
+article .bg span{
+    font-size: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+article .bg1 span{
+    font-size: 170px;
+    bottom: -75px;
+    right: -6px;
+}
+
+/* 이미지 박스 효과 */
+article .bg span{
+    transition: all 0.6s;
+    transform: scale(10);
+    opacity: 0;
+}
+
+article:hover span{
+    transform: scale(1);
+    opacity: 0.8;
+}
+/* 메인 이미지 박스 효과 */
+
+article .bg1 span{
+    transition: all 0.8s;
+    transform: scale(1) rotateY(0);
+    opacity: 1;
+}
+article:hover .bg1 span{
+    transform: scale(1) rotateY(360deg);
+    color: #222;
+}
+
+/* 텍스트 영역 */
+article .txt{
+    color: #666;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    transition: all 1s;
+}
+
+article:nth-child(3) .txt{ background-color: #bff7fa;}
+article:nth-child(11) .txt{ background-color: #e3f1fb;}
+
+/* txt안 wfont-icon 스타일 */
+article .txt i{
+    font-size: 300px;
+    color: #b3effc;
+    position: absolute;
+    bottom: -70px;
+    right: -200px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+article:nth-child(3) .txt i{
+    font-size: 200px;
+    color: #fff;
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    opacity: 0.7;
+}
+
+article .txt strong{
+    font-size: 30px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    display: block;
+    transition: all 0.7s;
+}
+article:hover .txt{
+    color: #fff;
+    background-color: #6ce2fb;
+}
+article:hover .txt strong{
+    color: #fff;
+}
+
+article:hover .txt i{
+    opacity: 0.5;
+    right: 0;
+}
